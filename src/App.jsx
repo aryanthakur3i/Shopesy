@@ -10,6 +10,7 @@ import Cart from "./pages/Cart";
 import Navbar from "./Components/Navbar";
 import SignUp from "./pages/login/SignUp";
 import SignIn from "./pages/login/SignIn";
+import Footer from "./Components/Footer";
 
 const App = () => {
   
@@ -31,6 +32,7 @@ const App = () => {
           
         </Routes>
       </BrowserRouter>
+      <Footer/>
     </>
   );
 };

@@ -1,20 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/productsSlice";
 
-const Product = () => {
+
+const Product = ({ limit }) => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.products);
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
 
+  
+ 
+
   return (
+    <>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 bg-gray-100">
       {data.isLoading ? (
         <h1>.....loading</h1>
       ) : (
-        data.data.map((products) => {
+        data.data.slice(0,limit || data.data.length).map((products) => {
           return (
             <div
               key={products.id}
@@ -29,12 +34,18 @@ const Product = () => {
              <span className="font-bold text-xl"> ${products.price}</span>
              <span className="text-yellow-500">⭐{products.rating?.rate}</span>
               </div>
-              <button>Add to Cart</button>
+              <button className="w-full mt-4 bg-green-900 text-white py-2 rounded-r-xl hover:bg-gray-800">Add to Cart</button>
             </div>
           );
         })
       )}
     </div>
+   
+   
+          
+          
+           
+   </>
   );
 };
 
