@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../redux/productsSlice";
 import Product from "./Product";
+import { Link } from "react-router-dom";
+import Category from "./Category";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -49,21 +51,26 @@ const Home = () => {
       <section className="max-w-7xl mx-auto px-6 py-12">
         <h2 className="text-3xl font-bold mb-8">Shop by Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          {categories.map((category) => (
+          {categories.map((category) => ( 
+            <Link 
+            key={category}
+            to={`/category/${encodeURIComponent(category)}`}
+            >
             <div key={category} className="bg-gray-100 p-8 rounded-xl text-center hover:shadow-lg transition cursor-pointer">
               <h3 className="font-semibold capitalize">{category}</h3>
             </div>
+            </Link>
           ))}
         </div>
       </section>
 
       {/* Featured products */}
 
-      <section>
-        <h2>
+      <section >
+        <h2 className="font-medium capitalize">
           Featured Products
         </h2>
-      <Product limit={8}/>
+      <Product limit={4}/>
       </section>
     </>
   );

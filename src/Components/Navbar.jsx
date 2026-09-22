@@ -5,11 +5,18 @@ import { FaCaretDown } from "react-icons/fa";
 import Product from "../pages/Product";
 import About from "../pages/About";
 import { IoCartOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 const Navbar = () => {
+
+  const CartItem = useSelector((state) => state.cart.items)
+
+  const cartCount = CartItem.reduce(
+     (total,item) => total + item.quantity, 0
+  );
   const Location = false;
   return (
-    <>
-      <div className="bg-[#a5cfbb] py-3 shadow-3xl">
+    <nav className="sticky top-0 z-50">
+      <div className="bg-[#a5cfbb] py-3  shadow-3xl">
         <div className=" max-w-6xl mx-auto flex justify-between items-center">
           {/* logo section*/}
           <div className=" flex gap-7 items-center">
@@ -73,12 +80,12 @@ const Navbar = () => {
             </ul>
             <Link to={'/cart'} className="relative">
             <IoCartOutline className=' h-7 w-7'/>
-            <span className=" bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white">0</span>
+            <span className=" bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white">{cartCount}</span>
             </Link>
           </nav>
         </div>
       </div>
-    </>
+    </nav>
   );
 };
 
