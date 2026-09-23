@@ -6,6 +6,9 @@ import Product from "../pages/Product";
 import About from "../pages/About";
 import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import WishlistIcon from "./WishlistIcon";
+
+
 const Navbar = () => {
 
   const CartItem = useSelector((state) => state.cart.items)
@@ -78,6 +81,11 @@ const Navbar = () => {
                 <li>SignUP</li>
               </NavLink>
             </ul>
+
+            <WishlistIcon/>
+
+            
+
             <Link to={'/cart'} className="relative">
             <IoCartOutline className=' h-7 w-7'/>
             <span className=" bg-red-500 px-2 rounded-full absolute -top-3 -right-3 text-white">{cartCount}</span>

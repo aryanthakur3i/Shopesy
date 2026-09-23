@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import WishlistButton from "../Components/WishlistButton";
+import AddToCartButton from "../Components/AddToCartButton";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -67,6 +69,8 @@ const ProductDetail = () => {
               ({product.rating?.count} reviews)
             </span>
           </div>
+          <WishlistButton product={product}/>
+
 
           {/* Price */}
           <p className="text-3xl font-bold text-green-700 mt-6">
@@ -77,11 +81,9 @@ const ProductDetail = () => {
           <p className="text-gray-600 leading-7 mt-6">
             {product.description}
           </p>
-
+          
           {/* Add to Cart */}
-          <button className="mt-8 bg-green-900 text-white px-8 py-3 rounded-xl hover:bg-gray-800 transition">
-            Add to Cart
-          </button>
+          <AddToCartButton product={product}/>
 
          
 

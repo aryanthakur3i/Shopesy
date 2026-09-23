@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector  } from "react-redux";
 import { addToCart } from "../redux/CartSlice";
+import WishlistButton from "./WishlistButton";
+import AddToCartButton from "./AddToCartButton";
+
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch()
@@ -32,6 +35,10 @@ const ProductCard = ({ product }) => {
             {product.title}
           </h1>
 
+          {/*wishlist */}
+
+          <WishlistButton product={product}/>
+
           {/*Descricption] */}
 
           <p className="text-gray-500 text-sm mt-2 line-clamp-2">
@@ -47,12 +54,7 @@ const ProductCard = ({ product }) => {
 
           {/*Button */}
 
-          <button
-            onClick={handleAddToCart}
-            className="w-full mt-4 bg-green-900 text-white py-2 rounded-r-2xl hover:bg-gray-900"
-          >
-            Add to Cart
-          </button>
+         <AddToCartButton product={product}/>
         </div>
       </Link>
     </>

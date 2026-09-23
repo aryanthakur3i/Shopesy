@@ -26,7 +26,7 @@ const Product = ({ limit , products: productList }) => {
       ) : (
        displayedProduct.map((product) => {
           return (
-           <ProductCard key={Product.id}
+           <ProductCard key={product.id}
            product={product}
            />
             

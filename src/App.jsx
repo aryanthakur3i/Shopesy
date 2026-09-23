@@ -12,6 +12,7 @@ import SignIn from "./pages/login/SignIn";
 import Footer from "./Components/Footer";
 import ProductsDetail from "./pages/ProductsDetail";
 import Category from "./pages/Category";
+import Wishlist from "./pages/Wishlist";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/wishlist" element={<Wishlist />}></Route>
           <Route path="/product/:id" element={<ProductsDetail />}></Route>
           <Route path="/category/:category" element={<Category />}></Route>
         </Routes>
