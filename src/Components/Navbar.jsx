@@ -7,9 +7,12 @@ import About from "../pages/About";
 import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import WishlistIcon from "./WishlistIcon";
+import SearchBar from "./SearchBar";
+
 
 
 const Navbar = () => {
+
 
   const CartItem = useSelector((state) => state.cart.items)
 
@@ -17,6 +20,8 @@ const Navbar = () => {
      (total,item) => total + item.quantity, 0
   );
   const Location = false;
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"))
   return (
     <nav className="sticky top-0 z-50">
       <div className="bg-[#a5cfbb] py-3  shadow-3xl">
@@ -36,6 +41,8 @@ const Navbar = () => {
               <FaCaretDown />
             </div>
           </div>
+
+          <SearchBar/>
           {/* menu section*/}
           <nav className="flex gap-7 items-center">
             <ul className="flex gap-7 items-center ">
@@ -72,6 +79,9 @@ const Navbar = () => {
                 <li>Contact</li>
               </NavLink>
 
+                {currentUser ? (
+                  <span className="font-semibold cursor-pointer"> {currentUser.name}</span>
+                ) :(
               <NavLink
                 to={"/signup"}
                 className={({ isActive }) =>
@@ -80,6 +90,7 @@ const Navbar = () => {
               >
                 <li>SignUP</li>
               </NavLink>
+                )}
             </ul>
 
             <WishlistIcon/>

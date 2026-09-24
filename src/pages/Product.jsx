@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/productsSlice";
 import ProductCard from "../Components/ProductCard";
+import { useSearch } from "../context/SearchContext";
 
 
 const Product = ({ limit , products: productList }) => {
+  const { search } = useSearch()
   const dispatch = useDispatch();
   const data = useSelector((state) => state.products);
   useEffect(() => {
@@ -15,7 +17,10 @@ const Product = ({ limit , products: productList }) => {
 
   const products = productList || data.data;
 
-  const displayedProduct = limit ? products.slice(0,limit) : products;
+  const filteredProducts = products.filter((product) => 
+  product.title.toLowerCase().includes(search.toLowerCase()))
+
+  const displayedProduct = limit ? filteredProducts.slice(0,limit) : filteredProducts;
  
 
   return (
