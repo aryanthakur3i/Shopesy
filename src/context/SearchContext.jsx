@@ -1,18 +1,22 @@
-import React, { Children } from 'react'
-import { createContext , useContext , useState } from 'react'
+import React, { Children } from "react";
+import { createContext, useContext, useState } from "react";
 
-const SearchContext = createContext()
+// create a context to manage the search state
+const SearchContext = createContext();
 
 export const SearchProvider = ({ children }) => {
-    const [search , setSearch ] = useState("")
+  // store the cureent search input value
+  const [search, setSearch] = useState("");
 
-    return(
-        <>
-         <SearchContext.Provider value={{search , setSearch}}>
-            {children}
-         </SearchContext.Provider>
-        </>
-    )
-}
+  return (
+    <>
+      {/* provide search state to all its child */}
+      <SearchContext.Provider value={{ search, setSearch }}>
+        {children}
+      </SearchContext.Provider>
+    </>
+  );
+};
 
-export const useSearch = () => useContext(SearchContext)
+// custom hook to easily access the search context
+export const useSearch = () => useContext(SearchContext);

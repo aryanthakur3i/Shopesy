@@ -1,12 +1,16 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
       <footer className="bg-gray-900 text-white mt-16">
         <div className="max-w-7xl mx-auto px-6 py-12">
+
+          {/* footer section */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-            {/* Shopesy */}
+            
+            {/* Brand information */}
             <div>
               <h2 className="text-2xl font-bold mb-4">
                 <span className="text-red-500 text-3xl">S</span>hopesy
@@ -21,10 +25,34 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-3 text-gray-300">
-                <li className="hover:text-white cursor-pointer">Home</li>
-                <li className="hover:text-white cursor-pointer">Products</li>
-                <li className="hover:text-white cursor-pointer">About Us</li>
-                <li className="hover:text-white cursor-pointer">Contact</li>
+                <li>
+                  <Link to='/'
+                  className="hover:text-white cursor-pointer"
+                  >
+                  Home
+                  </Link>
+                  </li>
+                <li>
+                  <Link to='/products'
+                  className="hover:text-white cursor-pointer"
+                  >
+                  Products
+                  </Link>
+                  </li>
+                  <li>
+                  <Link to='/about'
+                  className="hover:text-white cursor-pointer"
+                  >
+                  About Us
+                  </Link>
+                  </li>
+                  <li>
+                  <Link to='/contact'
+                  className="hover:text-white cursor-pointer"
+                  >
+                  Contact Us
+                  </Link>
+                  </li>
               </ul>
             </div>
 

@@ -7,21 +7,17 @@ import AddToCartButton from "./AddToCartButton";
 
 
 const ProductCard = ({ product }) => {
-  const dispatch = useDispatch()
 
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    dispatch(addToCart(product));
-  }
+  
+  
   return (
     <>
-      <Link to={`/product/${product.id}`} className="block">
-        <div className="bg-white rounded-2xl shadow-md p-4 hover:shadow-2xl transition">
+    <div className="bg-white rounded-2xl shadow-md p-3 sm:p-4 hover:shadow-2xl transition  flex flex-col">
+      <Link to={`/product/${product.id}`} className="flex-1">
+        
           {/*Image */}
 
-          <div className="h-60 flex items-center justify-center">
+          <div className="h-48 sm:h-52 md:h-56 lg:h-60  flex items-center justify-center">
             <img
               src={product.image}
               alt={product.title}
@@ -30,33 +26,37 @@ const ProductCard = ({ product }) => {
           </div>
 
           {/*Title */}
-
-          <h1 className="font-semibold text-lg mt-4 truncate">
+          <div className=" min-h-[56px] flex justify-between  items-start gap-2 mt-4">
+          <h1 className="font-semibold text-base sm:text-lg line-clamp-2">
             {product.title}
           </h1>
 
           {/*wishlist */}
 
           <WishlistButton product={product}/>
+          </div>
 
           {/*Descricption] */}
 
-          <p className="text-gray-500 text-sm mt-2 line-clamp-2">
+          <p className="text-gray-500 text-sm  mt-auto line-clamp-2 min-h-[40px]">
             {product.description}
           </p>
 
           {/*Price & Rating */}
-          <div className="flex justify-between items-center mt-4">
-            <span className="font-bold text-xl">${product.price}</span>
+          <div className="flex justify-between items-center gap-2 mt-4 min-h-[28px]">
+            <span className="font-bold text-lg sm:text-xl">${product.price}</span>
 
-            <span className="text-yellow-500 ">⭐{product.rating?.rate}</span>
+            <span className="text-yellow-500 text-sm sm:text-base ">⭐{product.rating?.rate}</span>
           </div>
 
           {/*Button */}
 
-         <AddToCartButton product={product}/>
-        </div>
+         
+        
       </Link>
+
+      <AddToCartButton product={product}/>
+      </div>
     </>
   );
 };

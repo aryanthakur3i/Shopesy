@@ -15,30 +15,70 @@ import Category from "./pages/Category";
 import Wishlist from "./pages/Wishlist";
 import { SearchProvider } from "./context/SearchContext";
 import Search from "./pages/Search";
+import Checkout from "./pages/Checkout";
+import OrderSucces from "./pages/OrderSucces";
+import ScrollToTop from "./Components/ScrollToTop";
+import PaymentMethod from "./Components/checkout/PaymentMethod";
 
 const App = () => {
   return (
     <>
+      {/* provides search state to the entire application */}
       <SearchProvider>
+        {/* handle client-side routing */}
         <BrowserRouter>
+          {/* top bar */}
           <TopBar />
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/products" element={<Product />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/cart" element={<Cart />}></Route>
-            <Route path="/signup" element={<SignUp />}></Route>
-            <Route path="/signin" element={<SignIn />}></Route>
-            <Route path="/wishlist" element={<Wishlist />}></Route>
-            <Route path="/product/:id" element={<ProductsDetail />}></Route>
-            <Route path="/category/:category" element={<Category />}></Route>
-             <Route path="/search" element={<Search />}></Route>
-          </Routes>
-        </BrowserRouter>
 
-        <Footer />
+          {/* Main navigation bar */}
+          <Navbar />
+
+          {/* Automatically scroll to the top when route chnage */}
+          <ScrollToTop />
+
+          {/* Application routes */}
+          <Routes>
+            {/* Home page */}
+            <Route path="/" element={<Home />}></Route>
+
+            {/* Product page */}
+            <Route path="/products" element={<Product />}></Route>
+
+            {/* About page */}
+            <Route path="/about" element={<About />}></Route>
+
+            {/* Contact page */}
+            <Route path="/contact" element={<Contact />}></Route>
+
+            {/* Cart page */}
+            <Route path="/cart" element={<Cart />}></Route>
+
+            {/* SignUp page */}
+            <Route path="/signup" element={<SignUp />}></Route>
+
+            {/* SignIn page */}
+            <Route path="/signin" element={<SignIn />}></Route>
+
+            {/* Wishlist page */}
+            <Route path="/wishlist" element={<Wishlist />}></Route>
+
+            {/* product detail page using product id */}
+            <Route path="/product/:id" element={<ProductsDetail />}></Route>
+
+            {/* category page using category name */}
+            <Route path="/category/:category" element={<Category />}></Route>
+
+            {/* Search result page */}
+            <Route path="/search" element={<Search />}></Route>
+
+            {/* Checkout page */}
+            <Route path="/checkout" element={<Checkout />}></Route>
+
+            {/* Order success page */}
+            <Route path="/order-success" element={<OrderSucces />}></Route>
+          </Routes>
+          <Footer />
+        </BrowserRouter>
       </SearchProvider>
     </>
   );
