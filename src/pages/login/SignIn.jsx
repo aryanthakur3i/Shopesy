@@ -114,7 +114,7 @@ const SignIn = () => {
 
             <button
               type="submit"
-              className="w-80 bg-[#434341] text-white py-3 mt-3 rounded-b-lg ml-15"
+              className="w-full sm:w-70 mx-auto block bg-[#434341] text-white py-3 mt-3 rounded-lg hover:bg-gray-800 transition"
             >
               {" "}
               Sign In

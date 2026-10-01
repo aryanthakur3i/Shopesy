@@ -86,7 +86,7 @@ const CheckoutForm = () => {
 
     // continue checkout when form is valid
     console.log("Delivery details:", formData);
-    alert("Delivewry details saved successfully");
+    alert("Delivery details saved successfully");
   };
 
   return (

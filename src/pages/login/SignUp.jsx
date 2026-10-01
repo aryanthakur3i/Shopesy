@@ -33,7 +33,7 @@ const SignUp = () => {
 
     // validate password length
     if(password.length < 6){
-      aleart("Password must contain atleast 6 character.")
+      alert("Password must contain atleast 6 character.")
     }
 
    
@@ -64,7 +64,7 @@ const SignUp = () => {
     // saved the registered user in local storage
     localStorage.setItem("user", JSON.stringify(user));
     alert("Account created successfuly !");
-    navigate("/");
+    navigate("/signin");
   };
   return (
     <>

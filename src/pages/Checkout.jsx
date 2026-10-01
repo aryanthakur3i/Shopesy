@@ -28,6 +28,7 @@ const Checkout = () => {
     // check payment method is selected
     if (!paymentMethod) {
       setPaymentError("Please select a payment method");
+      return
     }
 
     //clear payment error when validation succes

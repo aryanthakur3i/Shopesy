@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector  } from "react-redux";
-import { addToCart } from "../redux/CartSlice";
 import WishlistButton from "./WishlistButton";
 import AddToCartButton from "./AddToCartButton";
 
@@ -52,7 +50,7 @@ const ProductCard = ({ product }) => {
           {/*Button */}
 
          
-        
+        {/* add to cart button */}
       </Link>
 
       <AddToCartButton product={product}/>
