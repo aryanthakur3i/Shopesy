@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TopBar from "./Components/Topbar";
+import TopBar from "./Components/TopBar";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import About from "./pages/About";
