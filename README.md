@@ -1,16 +1,87 @@
-# React + Vite
+# 🛍️ Shopesy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Shopesy is a responsive e-commerce web application built with React, Redux Toolkit, Context API and Tailwind CSS.
 
-Currently, two official plugins are available:
+It allows users to browse products, search for products, explore categories, manage their cart and wishlist, and complete a checkout flow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+[Visit Shopesy](https://shopesy-seven.vercel.app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🛍️ Browse products
+- 🔎 Product search
+- 🗂️ Category-based product browsing
+- 📄 Product details
+- 🛒 Add to cart and manage cart
+- ❤️ Wishlist functionality
+- 🔐 Sign up and sign in
+- 💳 Checkout flow
+- ✅ Checkout form validation
+- 📱 Responsive design
+- 🌐 API integration
+- 🔄 Redux state management
+- 🧪 Unit testing
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- React
+- Redux Toolkit
+- Context API
+- React Router
+- Tailwind CSS
+- JavaScript
+- REST API
+- Vite
+- Vitest
+- React Testing Library
+
+## 🧪 Testing
+
+Unit tests are implemented using Vitest and React Testing Library.
+
+Run tests with:
+
+```bash
+npm test
+```
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/aryanthakur3i/Shopesy.git
+```
+
+Navigate to the project:
+
+```bash
+cd Shopesy
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## 📂 Project Overview
+
+Shopesy is a single-page e-commerce application that demonstrates:
+
+- React component-based architecture
+- Redux Toolkit for global state management
+- Context API for shared application data
+- API-based product data
+- React Router for navigation
+- Responsive UI using Tailwind CSS
+- Form validation
+- Frontend unit testing
