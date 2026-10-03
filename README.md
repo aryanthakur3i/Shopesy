@@ -85,3 +85,21 @@ Shopesy is a single-page e-commerce application that demonstrates:
 - Responsive UI using Tailwind CSS
 - Form validation
 - Frontend unit testing
+
+## 🔮 Future Improvements
+
+- Backend integration
+- Build and integrate a custom REST API
+- Secure authentication and authorization
+- Online payment integration
+- Order history and order tracking
+- Improved API error handling
+
+## 👨‍💻 Author
+
+**Aryan Thakur**
+
+## 🔗 Links
+
+- [Live Demo](https://shopesy-seven.vercel.app/)
+- [GitHub Repository](https://github.com/aryanthakur3i/Shopesy)
