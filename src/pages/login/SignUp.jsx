@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -34,6 +34,7 @@ const SignUp = () => {
     // validate password length
     if(password.length < 6){
       alert("Password must contain atleast 6 character.")
+      return
     }
 
    
@@ -142,9 +143,9 @@ const SignUp = () => {
 
             <p className="text-center mt-5 text-sm sm:text-base">
               Already have an account ?{" "}
-              <a href="/signin" className="font-semibold hover:underline">
+              <Link to="/signin" className="font-semibold hover:underline">
                 Sign In
-              </a>
+              </Link>
             </p>
           </div>
         </form>
