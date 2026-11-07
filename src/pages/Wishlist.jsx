@@ -31,7 +31,7 @@ const Wishlist = () => {
               {/* render each wishlist product */}
               {wishlistItems.map((product) => (
                 <div key={product.id}>
-                  <ProductCard product={product} />
+                  <ProductCard product={product} removeFromWishlistOnAdd={true} />
                   {/* remove from wishlist button */}
                   <button
                     onClick={() => handleRemove(product.id)}

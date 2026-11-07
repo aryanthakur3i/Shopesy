@@ -20,17 +20,17 @@ const SearchBar = () => {
   };
   return (
     <>
-      <form onSubmit={handleSearch} className="relative w-64">
+      <form onSubmit={handleSearch} className="relative w-70">
         <input
           type="text"
           placeholder="Search product"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full  bg-white rounded-full py-2 pl-4 pr-10 outline-none"
+          className="w-full ml-4  bg-white rounded-full py-2 pl-4 pr-10 outline-none"
         />
 
         {/* search icon */}
-        <Search className="absolute right-3 top-2.5 text-gray-700" size={20} />
+        <Search className="absolute right-3 top-2.5  text-gray-700" size={20} />
       </form>
     </>
   );

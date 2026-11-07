@@ -4,7 +4,7 @@ import WishlistButton from "./WishlistButton";
 import AddToCartButton from "./AddToCartButton";
 
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product , removeFromWishlistOnAdd = false }) => {
 
   
   
@@ -53,7 +53,10 @@ const ProductCard = ({ product }) => {
         {/* add to cart button */}
       </Link>
 
-      <AddToCartButton product={product}/>
+      <AddToCartButton 
+      product={product}
+      removeFromWishlistOnAdd={removeFromWishlistOnAdd}
+      />
       </div>
     </>
   );

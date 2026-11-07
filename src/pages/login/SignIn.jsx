@@ -19,13 +19,15 @@ const SignIn = () => {
     // vaildate email
      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-     if(emailRegex.test(trimmedEmail)){
+     if(!emailRegex.test(trimmedEmail)){
       alert("please enter a valid email")
+      return;
      }
 
      // vailidate password length
      if(password.length < 6){
       alert("password must be contain 6 character.")
+      return;
      }
     // get the previous register user from local storage
     const savedUser = localStorage.getItem("user");
@@ -62,7 +64,7 @@ const SignIn = () => {
     // redirect the user to the home page if login successfull
     alert("Sign IN successfully!");
     navigate("/");
-    window.location.reload();
+   
   };
 
   return (

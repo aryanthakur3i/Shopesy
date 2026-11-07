@@ -14,7 +14,11 @@ const WishlistButton = ({ product }) => {
   const iswishlisted = wishlistItems.some((item) => item.id === product.id);
 
   // add or remove the product from the wishlist
-  const handleWishlist = () => {
+  const handleWishlist = (e) => {
+    // prevent the parent Link from opening the products detail page
+    e.preventDefault();
+    e.stopPropagation();
+
     if (iswishlisted) {
       dispatch(removeFromWishlist(product.id));
     } else {
@@ -23,7 +27,12 @@ const WishlistButton = ({ product }) => {
   };
   return (
     <>
-      <button onClick={handleWishlist} className="text-2xl">
+      <button
+        type="button"
+        onClick={handleWishlist}
+        className="text-2xl"
+        aria-label={iswishlisted ? "Remove from wishlist" : "Add to wishlist "}
+      >
         {/* show a filled heart for wishlist product */}
         {iswishlisted ? <FaHeart className="text-red-500" /> : <FaRegHeart />}
       </button>

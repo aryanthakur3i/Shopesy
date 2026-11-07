@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Contact = () => {
+  //store whether the contact form was successfully submitted
+  const [submitted , setSubmitted] = useState(false)
+
+  // handle contact form submission
+  const handleSubmit = (e) =>{
+    // prevent the browser from the reloading the page
+    e.preventDefault()
+    // show the success message
+    setSubmitted(true)
+    //clear the form feild after submission
+    e.target.reset()
+
+    // hide the success message agter 3 second
+    setTimeout (() => {
+      setSubmitted(false)
+    },3000);
+  }
   return (
     <>
       <div className="bg-gray-200 min-h-screen">
@@ -49,12 +66,13 @@ const Contact = () => {
 
             <div className="bg-white rounded-2xl shadow-md p-8">
               <h2 className="text-2xl font-bold mb-6"> Send us a message</h2>
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
                   <label className="block font-medium mb-2">Name</label>
                   <input
                     type="text"
                     placeholder="Enter your name"
+                    required
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-gray-800"
                   />
                 </div>
@@ -63,10 +81,18 @@ const Contact = () => {
                   <textarea
                     rows="5"
                     placeholder="Enter your Message..."
+                    required
                     className=" w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring focus:ring-gray-800"
                   ></textarea>
                 </div>
                 <button type="submit" className="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-gray-800 transition">Send Message</button>
+
+                {/*success message*/}
+                {submitted && (
+                  <p className="text-green-700 text-center font-medium">
+                    Message sent successfully!
+                  </p>
+                )}
               </form>
             </div>
           </div>
@@ -77,3 +103,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
